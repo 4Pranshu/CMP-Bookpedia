@@ -38,13 +38,15 @@ fun BookListItem(
 
     ) {
         Row(
-            modifier = modifier
+            modifier = Modifier
                 .padding(16.dp)
                 .fillMaxWidth()
-                .height(IntrinsicSize.Min)
+                .height(IntrinsicSize.Min),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Box(
-                modifier = modifier
+                modifier = Modifier
                     .height(100.dp),
                 contentAlignment = Alignment.Center
             ) {
@@ -55,6 +57,7 @@ fun BookListItem(
                 val painter = rememberAsyncImagePainter(
                     model = book.imageUrl,
                     onSuccess = {
+                        imageLoadResult =
                         if (it.painter.intrinsicSize.height > 1 && it.painter.intrinsicSize.width > 1) {
                             Result.success(it.painter)
                         } else {
@@ -73,7 +76,7 @@ fun BookListItem(
                         Image(
                             painter = if (result.isSuccess) painter else painterResource(Res.drawable.book_error_2),
                             contentDescription = book.description,
-                            modifier = modifier.aspectRatio(0.65f, matchHeightConstraintsFirst = true),
+                            modifier = Modifier.aspectRatio(0.65f, matchHeightConstraintsFirst = true),
                             alignment = Alignment.Center,
                             contentScale = if (result.isSuccess) ContentScale.Crop else ContentScale.Fit
                         )
@@ -83,7 +86,7 @@ fun BookListItem(
 
             }
             Column(
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxHeight()
                     .weight(1f),
                 verticalArrangement = Arrangement.Center
@@ -104,7 +107,7 @@ fun BookListItem(
                 }
                 book.averageRating?.let { rating ->
                     Row(
-                        modifier = modifier,
+                        modifier = Modifier,
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
@@ -124,7 +127,7 @@ fun BookListItem(
             Icon(
                 imageVector = Icons.AutoMirrored.Default.KeyboardArrowRight,
                 contentDescription = null,
-                modifier = modifier
+                modifier = Modifier
                     .size(36.dp)
             )
         }

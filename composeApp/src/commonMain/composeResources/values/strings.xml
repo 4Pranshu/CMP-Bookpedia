@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resources>
-    <string name="search_hint">Search...</string>
-    <string name="clear_query">Clear Query</string>
+    <string name="search_hint">Search for a book...</string>
+    <string name="clear_query">Clear search</string>
+    <string name="search_results">Search results</string>
+    <string name="favourites">Favourite books</string>
+    <string name="no_search_results">No books matched your search</string>
+    <string name="no_favourites_books">You haven't added any favourite books yet</string>
+    <string name="error_disk_full">Oops, it seems like your disk is full.</string>
+    <string name="error_unknown">Oops, something went wrong.</string>
+    <string name="error_request_timeout">The request timed out.</string>
+    <string name="error_no_internet">Couldn't reach server, please check your internet connection.</string>
+    <string name="error_too_many_requests">Your quota seems to be exceeded.</string>
+    <string name="error_serialization">Couldn't parse data.</string>
 </resources>
