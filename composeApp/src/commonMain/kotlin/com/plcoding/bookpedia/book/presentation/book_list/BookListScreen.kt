@@ -49,7 +49,7 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun BookListScreenRoot(
-    viewModel: BookListViewModel = koinViewModel(),
+    viewModel: BookListViewModel,
     onBookClick: (Book) -> Unit,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
